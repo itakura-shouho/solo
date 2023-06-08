@@ -7,7 +7,7 @@ const config = require("./knexfile.js")[environment];
 const knex = require("knex")(config);
 const app = express();
 const PORT = process.env.PORT || 8000;
-// app.use(cors());
+app.use(cors());
 app.use(express.static("./静的ファイルのフォルダ"));
 app.use(express.json());
 
