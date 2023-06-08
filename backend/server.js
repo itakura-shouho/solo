@@ -6,7 +6,7 @@ const environment = process.env.DATABASE_URL ? "production" : "development";
 const config = require("./knexfile.js")[environment];
 const knex = require("knex")(config);
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8000;
 // app.use(cors());
 app.use(express.static("./静的ファイルのフォルダ"));
 app.use(express.json());

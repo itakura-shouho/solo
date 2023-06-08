@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npx mocha",
     "start": "nodemon server.js",
     "migrate": "npx knex migrate:latest",
     "seed": "npx knex seed:run",
@@ -21,6 +21,9 @@
     "sqlite3": "^5.1.6"
   },
   "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.22"
   }
 }
