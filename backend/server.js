@@ -1,22 +1,17 @@
 const express = require("express");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 const cors = require("cors");
-const environment = process.env.NODE_ENV || "development";
+// const environment = process.env.NODE_ENV || "development";
+const environment = process.env.DATABASE_URL ? "production" : "development";
 const config = require("./knexfile.js")[environment];
 const knex = require("knex")(config);
 const app = express();
-const PORT = 8000;
-app.use(cors());
-
+const PORT = process.env.PORT || 8080;
+// app.use(cors());
 app.use(express.static("./静的ファイルのフォルダ"));
-// app.use(bodyParser.json()); // JSONを解析するミドルウェアを追加
 app.use(express.json());
 
-// app.get("/", (req, res) => {
-//   console.log("req", req);
-//   res.send("返すもの");
-// });
-
+//投稿記事をpsqlへINSERTする
 app.post("/", async (req, res) => {
   const obj = req.body;
   console.log("obj", obj);
@@ -37,6 +32,7 @@ app.post("/", async (req, res) => {
   }
 });
 
+//投稿記事の一覧用API
 app.get("/", async (req, res) => {
   const db = await knex.select("*").from("articles");
   res.status(200).json(db);
