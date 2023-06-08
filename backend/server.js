@@ -15,7 +15,7 @@ app.use(express.json());
 app.post("/", async (req, res) => {
   const obj = req.body;
   console.log("obj", obj);
-  console.log("textBody", obj.registTextBody);
+  // console.log("textBody", obj.registTextBody);
 
   try {
     console.log("tryの中");
