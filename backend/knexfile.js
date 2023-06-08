@@ -7,13 +7,13 @@ module.exports = {
   development: {
     client: "postgresql",
     connection: {
-      database: "buying_list",
+      database: "articles",
       user: "user",
       password: "password",
     },
     migrations: {
       directory: "./db/migrations",
-      tableName: "knex_migrations",
+      tableName: "articles",
     },
   },
 

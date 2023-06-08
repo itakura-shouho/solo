@@ -1,0 +1,31 @@
+.pageTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.postForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputField {
+  width: 300px;
+  height: 30px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.submitButton {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+}

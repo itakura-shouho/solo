@@ -6,7 +6,8 @@ exports.up = function (knex) {
   return knex.schema.createTable("articles", (table) => {
     table.increments("id").primary();
     table.string("title", 20);
-    table.string("textbody", 300);
+    table.string("textBody", 300);
+    table.date("registDate");
   });
 };
 

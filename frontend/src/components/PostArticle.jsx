@@ -1,11 +1,13 @@
 import { useForm } from "react-hook-form";
+import "./styles/PostArticle.css";
 
 const defaultValues = {
   title: "",
   textBody: "",
 };
 
-export default function PostArticle() {
+export default function PostArticle(props) {
+  const { setState } = props;
   // 初期化
   const {
     register,
@@ -21,22 +23,26 @@ export default function PostArticle() {
     const registTextBody = data.textBody;
     const registDate = new Date();
     const method = "POST";
+    const headers = {
+      "Content-Type": "application/json",
+    };
     const register = { registTitle, registTextBody, registDate };
     const body = JSON.stringify(register);
-    fetch("http://localhost:8000/", { method, body })
+    console.log(body);
+    fetch("http://localhost:8000/", { method, headers, body })
       .then((res) => {
         if (res.status === 200) console.log(`${body}が登録できました！`);
       })
       .catch((res) => console.error(`${body}が登録できませんでした！`));
 
     reset(""); // フォームに入力した値をリセット
+    setState("articleList");
   };
 
   return (
     <>
-      <div>今は投稿画面</div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {/* <label>タイトル:</label> */}
+      <div className="pageTitle">今は投稿画面</div>
+      <form className="postForm" onSubmit={handleSubmit(onSubmit)}>
         <input
           {...register("title", {
             type: "text",
@@ -45,10 +51,10 @@ export default function PostArticle() {
           })}
           name="title"
           placeholder="タイトルを入力してください"
-        ></input>
-        <p>{errors.title?.message}</p> {/* エラー表示 */}
-        <br></br>
-        {/* <label>内容:</label> */}
+          className="inputField"
+        />
+        <p className="errorMessage">{errors.title?.message}</p>
+        <br />
         <input
           {...register("textBody", {
             type: "text",
@@ -56,9 +62,10 @@ export default function PostArticle() {
           })}
           name="textBody"
           placeholder="本文を入力してください"
-        ></input>
-        <p>{errors.body?.message}</p> {/* エラー表示 */}
-        <input type="submit" />
+          className="inputField"
+        />
+        <p className="errorMessage">{errors.textBody?.message}</p>
+        <input type="submit" className="submitButton" value="投稿する" />
       </form>
     </>
   );
