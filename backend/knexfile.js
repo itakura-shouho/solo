@@ -35,14 +35,14 @@ module.exports = {
 
   production: {
     client: "postgresql",
-    connection:
-      "postgres://user:UVKdCl9NphDAQP5Rh64qOX9gMboHnt6m@dpg-ci0ruphmbg5ffcnjls60-a/articles_621n",
-  },
-  pool: {
-    min: 2,
-    max: 10,
-  },
-  migrations: {
-    tableName: "knex_migrations",
-  },
-};
+    connection: "postgres://user:UVKdCl9NphDAQP5Rh64qOX9gMboHnt6m@dpg-ci0ruphmbg5ffcnjls60-a/articles_621n"
+    },
+    pool: {
+      min: 2,
+      max: 10,
+    },
+    migrations: {
+      directory: "./db/migrations",
+      tableName: "knex_migrations",
+    },
+  }
