@@ -37,13 +37,13 @@ module.exports = {
     client: "postgresql",
     connection:
       "postgres://user:UVKdCl9NphDAQP5Rh64qOX9gMboHnt6m@dpg-ci0ruphmbg5ffcnjls60-a/articles_621n",
+    migrations: {
+      directory: "./backend/db/migrations",
+      tableName: "knex_migrations",
+    },
   },
   pool: {
     min: 2,
     max: 10,
-  },
-  migrations: {
-    directory: "./backend/db/migrations",
-    tableName: "knex_migrations",
   },
 };
