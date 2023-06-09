@@ -12,7 +12,7 @@ module.exports = {
       password: "password",
     },
     migrations: {
-      directory: ".backend/db/migrations",
+      directory: "./backend/db/migrations",
       tableName: "articles",
     },
   },
@@ -43,7 +43,7 @@ module.exports = {
     max: 10,
   },
   migrations: {
-    directory: ".backend/db/migrations",
+    directory: "./backend/db/migrations",
     tableName: "knex_migrations",
   },
 };
