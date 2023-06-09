@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx mocha",
-    "start": "nodemon ./backend/server.js",
+    "start": "node ./backend/server.js",
     "migrate": "npx knex migrate:latest",
     "seed": "npx knex seed:run",
     "build": "npm install && npx knex migrate:latest --knexfile ./knexfile.js",
