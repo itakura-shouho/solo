@@ -8,6 +8,7 @@ const defaultValues = {
 
 export default function PostArticle(props) {
   const { setState } = props;
+  const URL="https://itakura-shouho-solo.onrender.com"
   // 初期化
   const {
     register,
@@ -29,7 +30,8 @@ export default function PostArticle(props) {
     const register = { registTitle, registTextBody, registDate };
     const body = JSON.stringify(register);
     console.log(body);
-    fetch("http://localhost:8000/", { method, headers, body })
+    // fetch("http://localhost:8000/", { method, headers, body })
+    fetch(URL + "/", { method, headers, body })
       .then((res) => {
         if (res.status === 200) console.log(`${body}が登録できました！`);
       })

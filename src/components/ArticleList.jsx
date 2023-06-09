@@ -3,10 +3,12 @@ import "./styles/ArticleList.css";
 
 export default function ArticleList(props) {
   const { state, list, setList } = props;
+  const URL = "https://itakura-shouho-solo.onrender.com";
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const createList = async () => {
-    await fetch("http://localhost:8000/")
+    // await fetch("http://localhost:8000/")
+    await fetch(URL + "/")
       .then((res) => res.json())
       .then((res) => {
         const newArray = res.map((obj) => {

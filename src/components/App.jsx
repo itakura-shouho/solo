@@ -8,6 +8,7 @@ import "./styles/App.css";
 export function App() {
   const [state, setState] = useState("articleList");
   const [list, setList] = useState([]);
+
   return (
     <div className="App">
       <Header className="App-header" state={state} setState={setState} />
