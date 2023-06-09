@@ -16,7 +16,8 @@ export default function ArticleList(props) {
             <div className="articleList" key={obj.id}>
               <div className="articleBlock" key={obj.id}>
                 <div className="articleId">id: {obj.id}</div>
-                <div className="articleTitle">内容: {obj.title}</div>
+                <div className="articleTitle">タイトル：{obj.title}</div>
+                <div className="articleBody">内容: {obj.textBody}</div>
                 <div className="articleDate">登録日時: {obj.registDate}</div>
               </div>
             </div>
